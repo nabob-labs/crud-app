@@ -1,7 +1,14 @@
+/**
+ * Project init — Root component
+ *
+ * - React Router routes to TasksPage
+ * - Bonus: react-error-boundary wraps the app with fallback UI on runtime errors
+ */
 import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import TasksPage from './pages/TasksPage.jsx';
 
+/** Error boundary fallback UI */
 function ErrorFallback({ error, resetErrorBoundary }) {
   return (
     <div className="error-boundary" role="alert">

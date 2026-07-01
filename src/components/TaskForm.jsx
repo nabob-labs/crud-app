@@ -1,3 +1,10 @@
+/**
+ * Create task form
+ *
+ * - react-hook-form manages form state
+ * - Zod validation: title required, 1–100 chars; inline errors on invalid input
+ * - On success: append to list (no full reload) and show Toast
+ */
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { toast } from 'react-toastify';

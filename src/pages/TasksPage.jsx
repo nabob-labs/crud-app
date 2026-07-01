@@ -1,3 +1,10 @@
+/**
+ *  Main page
+ *
+ * - Load tasks on mount; show Loading / error / list
+ * - Wire SearchBar; search state kept at page level
+ * - Bonus: Clear completed bulk action
+ */
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { TaskProvider } from '../context/TaskContext.jsx';
@@ -8,6 +15,7 @@ import SearchBar from '../components/SearchBar.jsx';
 
 function TasksContent() {
   const { tasks, loading, error, clearCompleted } = useTasks();
+  /** Search query owned by page; filtering logic lives in TaskList */
   const [searchQuery, setSearchQuery] = useState('');
 
   const hasCompleted = tasks.some((task) => task.completed);
@@ -25,10 +33,12 @@ function TasksContent() {
     }
   };
 
+  /** Show Loading... while fetching */
   if (loading) {
     return <p className="loading">Loading...</p>;
   }
 
+  /** Show simple error message on fetch failure */
   if (error) {
     return <p className="error">{error}</p>;
   }

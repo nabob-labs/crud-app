@@ -1,3 +1,9 @@
+/**
+ * Sample data
+ * Exports at least 3 tasks for initial load or service-layer bootstrap.
+ *
+ * Fields: id, title, completed, createdAt
+ */
 export const mockTasks = [
   {
     id: '1',

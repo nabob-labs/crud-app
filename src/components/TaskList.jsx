@@ -1,3 +1,10 @@
+/**
+ * Task list
+ *
+ * - Render TaskItem list
+ * - Filter titles by searchQuery (case-insensitive)
+ * - Empty-state copy must match ti.md exactly
+ */
 import { useTasks } from '../hooks/useTasks.js';
 import TaskItem from './TaskItem.jsx';
 

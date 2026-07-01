@@ -1,36 +1,50 @@
 # crud-app
 
-具备 CRUD（Create / Read / Update / Delete）能力的待办清单应用。
+A todo list application with full CRUD (Create / Read / Update / Delete) capabilities.
 
-## 技术栈
+## Tech Stack
 
-React 19、Vite、React Router、Context API、react-hook-form、Zod、axios（模拟 API）
+React 19, Vite, React Router, Context API, react-hook-form, Zod, mock API (setTimeout + Promise)
 
-## 运行项目
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-应用将在 [http://localhost:8080](http://localhost:8080) 启动。
+The app runs at [http://localhost:8080](http://localhost:8080).
 
-## 其他命令
+## Other Commands
 
 ```bash
-npm run build    # 生产构建
-npm run preview  # 预览构建结果
-npm run lint     # ESLint 检查
+npm run build    # Production build
+npm run preview  # Preview production build
+npm run lint     # ESLint check
 ```
 
-## 功能
+## Features
 
-- 加载并展示任务列表（含加载与错误状态）
-- 创建新任务（表单校验：标题 1–100 字符）
-- 切换完成状态、行内编辑标题
-- 删除任务（确认对话框）
-- 按标题搜索过滤
-- 创建/更新/删除成功时 Toast 提示
-- localStorage 持久化（刷新后数据保留）
-- 批量清除已完成任务（Clear completed）
-- `react-error-boundary` 错误降级 UI
+- Load and display tasks (loading and error states)
+- Create tasks (form validation: title 1–100 characters)
+- Toggle completion and inline title editing
+- Delete tasks (confirmation dialog)
+- Search/filter by title
+- Toast feedback on create, update, and delete
+- localStorage persistence (data survives refresh)
+- Bulk clear completed tasks (Clear completed)
+- `react-error-boundary` fallback UI
+
+## Project Structure
+
+```
+src/
+├── main.jsx, App.jsx
+├── pages/TasksPage.jsx
+├── components/{TaskForm,TaskList,TaskItem,SearchBar}.jsx
+├── hooks/useTasks.js
+├── services/taskService.js
+├── context/TaskContext.jsx
+├── data/mockTasks.js
+└── styles/app.css
+```

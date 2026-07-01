@@ -1,3 +1,10 @@
+/**
+ * Global styles (styling optional; keep layout simple)
+ *
+ * .task-item.completed strikethrough + fade for done vs. active tasks
+ * .empty-state for empty list and no search matches
+ * Bonus: .error-boundary fallback UI
+ */
 *,
 *::before,
 *::after {
@@ -123,6 +130,7 @@ button:hover {
   border-radius: 6px;
 }
 
+/* Completed tasks: strikethrough + faded text */
 .task-item.completed .task-title {
   text-decoration: line-through;
   opacity: 0.55;

@@ -1,3 +1,8 @@
+/**
+ * Project init — React entry point
+ *
+ * Mounts the root component, global styles, and Toast container.
+ */
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ToastContainer } from 'react-toastify';

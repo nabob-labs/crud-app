@@ -1,3 +1,4 @@
+/** Bonus — ESLint 9 flat config for npm run lint (ti.md) */
 import js from '@eslint/js';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';

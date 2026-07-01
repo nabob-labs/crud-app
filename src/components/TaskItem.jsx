@@ -1,3 +1,11 @@
+/**
+ * Single task row
+ *
+ *  Title, completion (checkbox), created date (date-fns). ompleted tasks styled with strikethrough / faded text
+ *  Toggle completion, inline title edit (Enter save / Escape cancel)
+ *  Delete button with window.confirm
+ *  Feedback: Toast on successful update/delete (react-toastify)
+ */
 import { useState } from 'react';
 import { format } from 'date-fns';
 import { toast } from 'react-toastify';
@@ -5,6 +13,7 @@ import clsx from 'clsx';
 import { z } from 'zod';
 import { useTasks } from '../hooks/useTasks.js';
 
+/** Same 1–100 char validation as the create form */
 const titleSchema = z
   .string()
   .trim()
@@ -17,6 +26,7 @@ export default function TaskItem({ task }) {
   const [editTitle, setEditTitle] = useState(task.title);
   const [editError, setEditError] = useState('');
 
+  /** Toggle completion; persisted via service layer */
   const handleToggle = async () => {
     try {
       await updateTask(task.id, { completed: !task.completed });
@@ -58,6 +68,7 @@ export default function TaskItem({ task }) {
     }
   };
 
+  /** Confirm before delete; Toast on success */
   const handleDelete = async () => {
     if (!window.confirm('Are you sure you want to delete this task?')) {
       return;
